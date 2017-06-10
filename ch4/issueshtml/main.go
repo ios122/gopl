@@ -10,7 +10,7 @@ import (
 	"log"
 	"os"
 
-	"gopl.io/ch4/github"
+	"gopl/ch4/github"
 )
 
 //!+template
@@ -50,3 +50,4 @@ func main() {
 }
 
 //!-
+// go run main.go repo:golang/go commenter:gopherbot json encoder >issues.html
