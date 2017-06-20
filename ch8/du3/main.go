@@ -24,6 +24,8 @@ var vFlag = flag.Bool("v", false, "show verbose progress messages")
 
 //!+
 func main() {
+	start_time := time.Now()
+
 	// ...determine roots...
 
 	//!-
@@ -32,7 +34,7 @@ func main() {
 	// Determine the initial directories.
 	roots := flag.Args()
 	if len(roots) == 0 {
-		roots = []string{"."}
+		roots = []string{"/Users/liangbo"}
 	}
 
 	//!+
@@ -72,6 +74,7 @@ loop:
 	printDiskUsage(nfiles, nbytes) // final totals
 	//!+
 	// ...select loop...
+	fmt.Printf("cost:%f s", time.Now().Sub(start_time).Seconds())
 }
 
 //!-

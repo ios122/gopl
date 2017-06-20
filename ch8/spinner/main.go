@@ -13,10 +13,24 @@ import (
 
 //!+
 func main() {
-	go spinner(100 * time.Millisecond)
-	const n = 45
-	fibN := fib(n) // slow
-	fmt.Printf("\rFibonacci(%d) = %d\n", n, fibN)
+	//go spinner(100 * time.Millisecond)
+	//const n = 45
+	//fibN := fib(n) // slow
+	//fmt.Printf("\rFibonacci(%d) = %d\n", n, fibN)
+
+
+	var timeNow = time.Now()
+
+	utcHour := timeNow.In(time.UTC).Hour()
+
+	diffHour := (10 - utcHour)
+
+	if diffHour <= -12 {
+		diffHour += 24
+	}
+	ret := []string{fmt.Sprintf("%+.4d", diffHour*100), fmt.Sprintf("%+.4d", diffHour*100+30)}
+
+	fmt.Println(ret)
 }
 
 func spinner(delay time.Duration) {

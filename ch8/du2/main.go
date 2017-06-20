@@ -29,7 +29,7 @@ func main() {
 	flag.Parse()
 	roots := flag.Args()
 	if len(roots) == 0 {
-		roots = []string{"."}
+		roots = []string{"/Users/liangbo"}
 	}
 
 	// Traverse the file tree.

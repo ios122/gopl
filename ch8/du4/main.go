@@ -32,10 +32,12 @@ func cancelled() bool {
 //!-1
 
 func main() {
+	start_time := time.Now()
+
 	// Determine the initial directories.
 	roots := os.Args[1:]
 	if len(roots) == 0 {
-		roots = []string{"."}
+		roots = []string{"/Users/liangbo"}
 	}
 
 	//!+2
@@ -84,6 +86,8 @@ loop:
 		}
 	}
 	printDiskUsage(nfiles, nbytes) // final totals
+
+	fmt.Printf("cost:%f s", time.Now().Sub(start_time).Seconds())
 }
 
 func printDiskUsage(nfiles, nbytes int64) {
